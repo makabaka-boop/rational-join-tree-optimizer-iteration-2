@@ -1,0 +1,16 @@
+# joinplan: dependency-free JSON join-order planner.
+#
+#   plan one problem:  docker compose run -T joinplan < examples/chain3.json
+#   run the test suite: docker compose run --rm joinplan-tests
+services:
+  joinplan:
+    build:
+      context: .
+      target: app
+    image: joinplan:latest
+
+  joinplan-tests:
+    build:
+      context: .
+      target: tests
+    image: joinplan:tests
