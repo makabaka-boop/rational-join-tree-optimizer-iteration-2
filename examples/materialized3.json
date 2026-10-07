@@ -1,0 +1,19 @@
+{
+  "tables": [
+    {"name": "A", "rows": 100},
+    {"name": "B", "rows": 200},
+    {"name": "C", "rows": 50}
+  ],
+  "predicates": [
+    {"left": "A", "right": "B", "selectivity": "1/10"},
+    {"left": "B", "right": "C", "selectivity": "1/4"}
+  ],
+  "selectivities2": ["1/5", "1"],
+  "materialized": {
+    "tables": ["A", "B"],
+    "rows": 2000,
+    "read_cost": "100",
+    "rows2": 4000,
+    "read_cost2": "100"
+  }
+}
